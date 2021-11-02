@@ -1,0 +1,199 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http:/www.thymeleaf.org">
+<head>
+	<title>Student Portal - Sent</title>
+	<div th:replace="header :: myheader"></div>
+</head> 
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		<!--left-fixed -navigation-->
+		<aside class="sidebar-left">
+      <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+	<div th:insert="common :: glance"></div>
+          </div>
+		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div th:insert="Prof-common-left-navbar :: left-navbar"></div>
+		</div>          
+          <!-- /.navbar-collapse -->
+      </nav>
+    </aside>
+	</div>
+		<!--left-fixed -navigation-->
+		
+		<!-- header-starts -->
+		<div th:insert="common-navbar :: navbar"></div>
+		<!-- //header-ends -->
+		<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page">
+				<h2 class="title1">Mail Page</h2>
+				<div class="col-md-4 compose-left">
+					<div class="folder widget-shadow">
+						<ul>
+							<div th:insert="common :: mailbox"></div>
+						</ul>
+					</div>
+					<div class="chat-grid widget-shadow">
+						<ul>
+							<li class="head"><i class="fa fa-user" aria-hidden="true"></i>Friends (Online) </li>
+							<li><a href="#">
+									<div class="chat-left">
+										<img class="img-circle" src="images/i1.png" alt="">
+										<label class="small-badge"></label>
+									</div>
+									<div class="chat-right">
+										<p>Alexander</p>
+										<h6>Nullam quis risus eget </h6>
+									</div>
+									<div class="clearfix"> </div>	
+								</a>
+							</li>
+							<li><a href="#">
+									<div class="chat-left">
+										<img class="img-circle" src="images/i2.png" alt="">
+										<label class="small-badge bg-green"></label>
+									</div>
+									<div class="chat-right">
+										<p>Jackson jacob</p>
+										<h6>Urna mollis ornare vel</h6>
+									</div>
+									<div class="clearfix"> </div>	
+								</a>
+							</li>
+							<li><a href="#">
+									<div class="chat-left">
+										<img class="img-circle" src="images/i3.png" alt="">
+										<label class="small-badge bg-green"></label>
+									</div>
+									<div class="chat-right">
+										<p>Elisa liden </p>
+										<h6>Quis risus ullam neget </h6>
+									</div>
+									<div class="clearfix"> </div>	
+								</a>
+							</li>
+							<li><a href="#">
+									<div class="chat-left">
+										<img class="img-circle" src="images/i4.png" alt="">
+										<label class="small-badge"></label>
+									</div>
+									<div class="chat-right">
+										<p>Michael John</p>
+										<h6>Mollis ornare Urna vel</h6>
+									</div>
+									<div class="clearfix"> </div>	
+								</a>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<div class="col-md-8 compose-right widget-shadow">
+					<div class="panel-default">
+						<div class="panel-heading">
+							Sent 
+						</div>
+						<div class="inbox-page row">
+					<h4>Latest</h4>
+				<div th:if="${#lists.isEmpty(sent)}">
+				 <h2>EMPTY</h2>
+				</div>
+
+				<div th:unless="${#lists.isEmpty(sent)}">
+				<div th:each ="mail : ${sent}">
+					
+					<div class="inbox-row widget-shadow" id="accordion" role="tablist" aria-multiselectable="true">
+						<div class="mail "> <input type="checkbox" class="checkbox"> </div>
+						<div class="mail"><img src="images/i1.png" alt=""/></div>
+						<div class="mail mail-name"> <h6 th:utext="${mail.Sender.firstName}"></h6> </div>
+						<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+							<div class="mail"><p th:utext="${mail.Object}"></p></div>
+						</a>
+						<div class="mail-right dots_drop">
+							<div class="dropdown">
+								<a href="#"  data-toggle="dropdown" aria-expanded="false">
+									<p><i class="fa fa-ellipsis-v mail-icon"></i></p>
+								</a>
+								<ul class="dropdown-menu float-right">
+									<div th:insert="common :: ReplySpamDelete"></div>
+								</ul>
+							</div> 
+						</div>
+						<div class="mail-right"><p th:utext="${mail.dateofcreation}"></p></div>
+						<div class="clearfix"> </div>
+						<div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingOne">
+							<div class="mail-body">
+							<p th:utext="${mail.Body}"></p>
+								<form>
+									<input type="text" placeholder="Reply to sender" required="">
+									<input type="submit" value="Send">
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				
+				</div>
+				
+				
+						
+			</div>
+				</div>
+				<div class="clearfix"> </div>	
+			</div>
+				
+			</div>
+		</div>
+		<!--footer-->
+				<div th:insert="footer :: foot"></div>
+        <!--//footer-->
+	</div>
+	
+	<!-- side nav js -->
+	<script src='../../js/SidebarNav.min.js' type='text/javascript'></script>
+	<script>
+      $('.sidebar-menu').SidebarNav()
+    </script>
+	<!-- //side nav js -->
+	
+	<!-- Classie --><!-- for toggle left push menu script -->
+		<script src="../../js/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+				
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+		</script>
+	<!-- //Classie --><!-- //for toggle left push menu script -->
+		
+	<!--scrolling js-->
+	<script src="../../js/jquery.nicescroll.js"></script>
+	<script src="../../js/scripts.js"></script>
+	<!--//scrolling js-->
+	
+	<!-- Bootstrap Core JavaScript -->
+   <script src="../../js/bootstrap.js"> </script>
+   
+</body>
+</html>

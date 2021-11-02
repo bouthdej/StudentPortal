@@ -1,0 +1,35 @@
+<html>
+<body>
+<div id="common" th:fragment="glance">
+	            <h1><a class="navbar-brand" href="/home"><span class="fa fa-area-chart"></span> Tekup <span class="dashboard_text">Students Portal</span></a></h1>
+
+</div>
+<div id="common" th:fragment="mailbox">
+<li class="head"><i class="fa fa-folder" aria-hidden="true"></i>Folders</li>
+<li><a href="/inbox"><i class="fa fa-inbox"></i>Inbox <span>52</span></a></li>
+<li><a href="/sent"><i class="fa fa fa-envelope-o"></i>Sent </a></li>
+<li><a href="#"><i class="fa fa-file-text-o"></i>Drafts <span>03</span></a> </li>
+<li><a href="/student/spam"><i class="fa fa-flag-o"></i>Spam </a></li>
+<li><a href="#"><i class="fa fa-trash-o"></i>Trash</a></li>
+</div>
+
+<div id="common" th:fragment="ReplySpamDelete">
+	<li>
+		<a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+			<i class="fa fa-reply mail-icon"></i>
+			Reply
+		</a>
+	</li>
+	<li>		
+		<i class="fa fa-reply mail-icon"></i>
+	<a th:href="@{/student/spam/{id}(id=${mail.mailId})}" custom:linkMethod="post">Spam</a>
+	</li>
+	<li>
+		<a href="#" class="font-red" title="">
+			<i class="fa fa-trash-o mail-icon"></i>
+			Delete
+		</a>
+	</li>
+</div>
+</body>
+</html>

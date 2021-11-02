@@ -1,0 +1,318 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http:/www.thymeleaf.org">
+<head>
+	<title>Student Portal - Add Seance To Class</title>
+	<div th:replace="header :: myheader"></div>
+</head>
+<body class="cbp-spmenu-push">
+	<div class="main-content">
+	<div class="cbp-spmenu cbp-spmenu-vertical cbp-spmenu-left" id="cbp-spmenu-s1">
+		<!--left-fixed -navigation-->
+		<aside class="sidebar-left">
+      <nav class="navbar navbar-inverse">
+          <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target=".collapse" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+<div th:insert="common :: glance"></div>          </div>
+          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+		<div th:insert="common-left-navbar :: left-navbar"></div>
+		</div>
+		</nav>
+		</aside>
+		</div>
+		
+		<!--left-fixed -navigation-->
+		
+		<!-- header-starts -->
+		<div th:insert="common-navbar :: navbar"></div>
+		<!-- //header-ends -->
+		<!-- main content start-->
+		<div id="page-wrapper">
+			<div class="main-page signup-page">
+				<h2 class="title1">TIME TABLE</h2>
+			</div>
+			
+			<h2 class="title1"  th:utext="${classe.className}"></h2>
+			<br>
+		    <table cellspacing="0" align="center">
+        <!--<caption>Timetable</caption>-->
+        <tr>
+        <thead>
+            <td align="center" height="50" 
+                width="100"><br>
+                <b>Day/Period</b></br>
+            </td>
+            <td align="center" height="50" 
+                width="300">
+                <b>Seance 1<br>9:00-10:30 10:40-12-15</b>
+            </td>
+			<td align="center" height="50" 
+		                width="100">
+		                <b>Break<br>12:15-13:15</b>
+            </td>
+            <td align="center" height="50" 
+                width="300">
+                <b>Seance 2<br>13:15-14:45 15:00-16:30</b>
+            </td>
+			<td align="center" height="50" 
+		                width="100">
+		                <b>Break<br>16:30-18:00</b>
+            </td>
+            <td align="center" height="50" 
+                width="300">
+                <b>Seance 3<br>18:00-19:30 19:45-21:00</b>
+            </td>
+            </thead>
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Monday</b></td>
+             
+            <td align="center" height="50" width="300">
+			<div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 1 AND ${seance.dayOfWeek} == 'Monday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+			</td>
+            <td rowspan="6" align="center" height="50">
+                <h2>L<br>U<br>N<br>C<br>H</h2>
+            </td>
+            <td align="center" height="50" width="300">
+			<div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 2 AND ${seance.dayOfWeek} == 'Monday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+			</td>
+            <td rowspan="6" align="center" height="50">
+                <h2>B<br>R<br>E<br>A<br>K</h2>
+            </td>
+            <td align="center" height="50" width="300">
+			<div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 3 AND ${seance.dayOfWeek} == 'Monday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+			</td>
+            
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Tuesday</b>
+            </td>
+            <td align="center" height="50" width="300">
+			<div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 1 AND ${seance.dayOfWeek} == 'Tuesday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+			</td>
+
+            <td align="center" height="50">
+             <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 2 AND ${seance.dayOfWeek} == 'Tuesday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+			</td>
+			<td align="center" height="50">
+			<div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 3 AND ${seance.dayOfWeek} == 'Tuesday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+			</td>
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Wednesday</b>
+            </td>
+            <td align="center" height="50" width="300">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 1 AND ${seance.dayOfWeek} == 'Wednesday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 2 AND ${seance.dayOfWeek} == 'Wednesday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div></td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 3 AND ${seance.dayOfWeek} == 'Wednesday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div></td>
+
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Thursday</b>
+            </td>
+            <td align="center" height="50" width="300">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 1 AND ${seance.dayOfWeek} == 'Thursday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 2 AND ${seance.dayOfWeek} == 'Thursday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 3 AND ${seance.dayOfWeek} == 'Thursday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Friday</b>
+            </td>
+            <td align="center" height="50" width="300">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 1 AND ${seance.dayOfWeek} == 'Friday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 2 AND ${seance.dayOfWeek} == 'Friday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 3 AND ${seance.dayOfWeek} == 'Friday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+        </tr>
+        <tr>
+            <td align="center" height="50">
+                <b>Saturday</b>
+            </td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 1 AND ${seance.dayOfWeek} == 'Saturday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 2 AND ${seance.dayOfWeek} == 'Saturday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+            <td align="center" height="50">
+            <div th:each="seance : ${classe.seances}">
+             <span th:if="${seance.numSeance} == 3 AND ${seance.dayOfWeek} == 'Saturday' "> 
+             <span th:utext="${seance.subjectName}"></span><br>
+             <span th:utext="${seance.prof.firstName}"></span> <span th:utext="${seance.prof.lastName}"></span><br>
+             <span th:utext="${seance.numClass}"></span>
+             </span>
+            </div>
+            </td>
+        </tr>
+    </table>
+    <br>
+		</div>
+		<!--footer-->
+		<div class="footer">
+		</div>
+        <!--//footer-->
+	</div>
+	<script src="../../js/password.js"></script>
+	<!-- side nav js -->
+	<script src="../../js/SidebarNav.min.js" type='text/javascript'></script>
+	<script>
+      $('.sidebar-menu').SidebarNav()
+    </script>
+	<!-- //side nav js -->
+	
+	<!-- Classie --><!-- for toggle left push menu script -->
+		<script src="../../js/classie.js"></script>
+		<script>
+			var menuLeft = document.getElementById( 'cbp-spmenu-s1' ),
+				showLeftPush = document.getElementById( 'showLeftPush' ),
+				body = document.body;
+				
+			showLeftPush.onclick = function() {
+				classie.toggle( this, 'active' );
+				classie.toggle( body, 'cbp-spmenu-push-toright' );
+				classie.toggle( menuLeft, 'cbp-spmenu-open' );
+				disableOther( 'showLeftPush' );
+			};
+			
+			function disableOther( button ) {
+				if( button !== 'showLeftPush' ) {
+					classie.toggle( showLeftPush, 'disabled' );
+				}
+			}
+		</script>
+	<!-- //Classie --><!-- //for toggle left push menu script -->
+	
+	<!--scrolling js-->
+	<script src="../../js/jquery.nicescroll.js"></script>
+	<script src="../../js/scripts.js"></script>
+	<!--//scrolling js-->
+	
+	<!-- Bootstrap Core JavaScript -->
+	<script src="../../js/bootstrap.js"> </script>
+	
+</body>
+</html>

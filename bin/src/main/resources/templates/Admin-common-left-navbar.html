@@ -1,0 +1,64 @@
+<html>
+<head>
+	<div th:replace="header :: myheader"></div>
+</head>
+
+<body>
+<div th:fragment="left-navbar">
+	
+            <ul class="sidebar-menu">
+              
+              <li class="treeview">
+                <a href="">
+                <i class="fa fa-dashboard"></i> <span>ADMIN Home</span>
+                </a>
+              </li>
+			  
+              
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Student</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/studentlist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="icons.html"><i class="fa fa-angle-right"></i> Add</a></li>
+                  
+                </ul>
+              </li>
+              
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Professor</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/proflist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="icons.html"><i class="fa fa-angle-right"></i> Add</a></li>
+                  
+                </ul>
+              </li>
+			  
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Document</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="general.html"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="icons.html"><i class="fa fa-angle-right"></i> Add</a></li>
+                  
+                </ul>
+              </li>
+              
+              
+              
+            </ul>
+          
+	</div>
+<script src="/static/js/bootstrap.js"> </script>
+</body>
+</html>

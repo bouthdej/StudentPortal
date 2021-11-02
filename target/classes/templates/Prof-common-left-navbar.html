@@ -1,0 +1,62 @@
+<html>
+<head>
+	<div th:replace="header :: myheader"></div>
+</head>
+
+<body>
+<div th:fragment="left-navbar">
+	
+            <ul class="sidebar-menu">
+              
+              <li class="treeview">
+                <a href="">
+                <i class="fa fa-dashboard"></i> <span>Professor Home</span>
+                </a>
+              </li>
+			  
+              
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Student</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/prof/liststudent"><i class="fa fa-angle-right"></i> List</a></li>
+                  
+                  
+                </ul>
+              </li>
+              
+              
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-envelope"></i> <span>Mailbox </span>
+                <i class="fa fa-angle-left pull-right"></i><small class="label pull-right label-info1">08</small><span class="label label-primary1 pull-right">02</span></a>
+                <ul class="treeview-menu">
+                  <li><a href="/inbox"><i class="fa fa-angle-right"></i> Mail Inbox </a></li>
+                  <li><a href="/composeMail"><i class="fa fa-angle-right"></i> Compose Mail </a></li>
+                </ul>
+              </li>
+			  
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Document</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/prof/listDocs"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/prof/uploadDocument"><i class="fa fa-angle-right"></i> Add</a></li>
+                  
+                </ul>
+              </li>
+              
+              
+              
+            </ul>
+          
+	</div>
+<script src="../../static/js/bootstrap.js"> </script>
+</body>
+</html>

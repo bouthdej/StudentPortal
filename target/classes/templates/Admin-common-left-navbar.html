@@ -1,0 +1,178 @@
+<html>
+<head>
+	<div th:replace="header :: myheader"></div>
+</head>
+
+<body>
+<div th:fragment="left-navbar">
+	
+            <ul class="sidebar-menu">
+              
+              
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Student</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/studentlist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addstudent"><i class="fa fa-angle-right"></i> Add</a></li>
+                  
+                </ul>
+              </li>
+              
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Professor</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/proflist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addprof"><i class="fa fa-angle-right"></i> Add</a></li>
+                  
+                </ul>
+              </li>
+			  <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Section</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/sectionlist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addsection"><i class="fa fa-angle-right"></i> Add</a></li>
+                  
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Subjects</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/subjectlist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addsubject"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Add Subject To section</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/listSectionSubject"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addSubjectToSection"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="/admin/listDocs">
+                <i class="fa fa-laptop"></i>
+                <span>Documents</span>
+                </a>
+                
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Clubs</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/clublist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addclub"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Classes</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/classelist"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addclasse"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li> 
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Add Seance to Classes</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/listSeanceToClass"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addSeanceToClass"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Add Student To classes</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/listStudentClass	"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addStudentToClass"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Add Prof To classes</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/listProfClass	"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addProfToClass"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Payments</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/listPayments"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addPayment"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>Certifications</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/certifications"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addCertification"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              <li class="treeview">
+                <a href="/admin/requests">
+                <i class="fa fa-laptop"></i>
+                <span>Requests</span>
+                </a>
+              </li>
+              <li class="treeview">
+                <a href="#">
+                <i class="fa fa-dashboard"></i>
+                <span>Announce</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                  <li><a href="/admin/listannounce"><i class="fa fa-angle-right"></i> List</a></li>
+                  <li><a href="/admin/addannounce"><i class="fa fa-angle-right"></i> Add</a></li>
+                </ul>
+              </li>
+              
+            </ul>
+          
+	</div>
+<script src="../../static/js/bootstrap.js"> </script>
+</body>
+</html>
